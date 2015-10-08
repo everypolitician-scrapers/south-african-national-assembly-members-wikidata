@@ -13,7 +13,6 @@ end
 
 def wikinames(url)
   noko = noko_for(url)
-  binding.pry
   noko.xpath('//table[@class="navbox"]//table//tr[td]/td[1]//a[not(@class="new")]/@title').map(&:text)
 end
 
