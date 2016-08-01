@@ -6,6 +6,6 @@ require 'pry'
 
 names = EveryPolitician::Wikidata.wikipedia_xpath( 
   url: 'https://en.wikipedia.org/wiki/Template:Current_MPs_of_South_Africa',
-  xpath: '//table[@class="navbox"]//table//tr[td]/td[1]//a[not(@class="new")]/@title',
-) 
+  xpath: '//div[@class="navbox"]//table//tr[td]/td[1]//a[not(@class="new")]/@title',
+)
 EveryPolitician::Wikidata.scrape_wikidata(names: { en: names })
