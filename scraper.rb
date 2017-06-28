@@ -15,8 +15,8 @@ EOQ
 
 ids = EveryPolitician::Wikidata.sparql(sparq)
 
-names = EveryPolitician::Wikidata.wikipedia_xpath( 
+names = EveryPolitician::Wikidata.wikipedia_xpath(
   url: 'https://en.wikipedia.org/wiki/Template:Current_MPs_of_South_Africa',
-  xpath: '//div[@class="navbox"]//table//tr[td]/td[1]//a[not(@class="new")]/@title',
+  xpath: '//div[@role="navigation"]//table//tr[td]/td[1]//a[not(@class="new")]/@title',
 )
 EveryPolitician::Wikidata.scrape_wikidata(ids: ids, names: { en: names })
