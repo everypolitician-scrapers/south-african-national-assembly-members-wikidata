@@ -4,15 +4,7 @@
 require 'wikidata/fetcher'
 require 'pry'
 
-sparq = <<EOQ
-  SELECT ?item
-  WHERE {
-    ?item p:P39 ?position_statement .
-    ?position_statement ps:P39 wd:Q16744266 ;
-                        pq:P2937 wd:Q18109299 .
-  }
-EOQ
-
+sparq = 'SELECT ?item WHERE { ?item p:P39/pq:P2937 wd:Q18109299 }'
 ids = EveryPolitician::Wikidata.sparql(sparq)
 
 names = EveryPolitician::Wikidata.wikipedia_xpath(
